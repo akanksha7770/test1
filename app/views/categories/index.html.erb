@@ -1,0 +1,29 @@
+<h1>Listing Categories</h1>
+<%= link_to 'New category', new_category_path, :class=> "btn btn-warning" %>
+<td><%= link_to 'My category', categories_path, :class => "btn btn-info" %></td>
+<table class="table table-bordered table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      
+      <th scope="col">SHOW</th>
+      <th scope="col">EDIT</th>
+      <th scope="col">DELETE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @categories.each_with_index do |category, index| %>
+      <tr>
+        <td><%= index + 1 %></td>
+        <td><%= category.name %></td>
+        
+        <td><%= link_to 'Show', category_path(category), :class => "btn btn-success" %></td>
+        <td><%= link_to 'Edit', edit_category_path(category), :class => "btn btn-info" %></td>
+        <td><%= link_to 'Destroy', category_path(category),
+                method: :delete,
+                data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %></td>
+      </tr>
+    <% end %>  
+  </tbody>
+</table>

@@ -1,0 +1,23 @@
+<p>
+  <strong>Category_id:</strong>
+  <%= @book.category_id %>
+</p>
+ 
+ <p>
+  <strong>Book_name:</strong>
+  <%= @book.book_name %>
+</p>
+
+<p>
+  <strong>Author_name:</strong>
+  <%= @book.author_name %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @book.price %>
+</p>
+
+<%= link_to 'Edit', edit_book_path(@book), :class=> "btn btn-success" %>
+<%= link_to 'Back', books_path, :class=> "btn btn-warning" %>
+

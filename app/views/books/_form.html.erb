@@ -1,0 +1,29 @@
+<%= form_for :book, url: books_path do |f| %>
+
+  <p>
+    <%= f.label :category_id %><br>
+    <%= f.select(:category_id, Category.all.collect{|u| [u.name, u.id]}, :prompt => 'select')%> 
+  </p>
+  
+
+  <p>
+    <%= f.label :book_name %><br>
+    <%= f.text_field :book_name %>
+  </p>
+ 
+  <p>
+    <%= f.label :author_name %><br>
+    <%= f.text_area :author_name %>
+  </p>
+
+  <p>
+    <%= f.label :price %><br>
+    <%= f.text_area :price %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+ 
+<% end %>
+

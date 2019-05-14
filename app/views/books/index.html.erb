@@ -1,0 +1,41 @@
+<h1>Listing Books</h1>
+<%= link_to 'New book', new_book_path, :class=> "btn btn-warning" %>
+<td><%= link_to 'My book', books_path, :class => "btn btn-info" %></td>
+<table class="table table-bordered table-dark bg">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Category</th>
+      <th scope="col">Book_name</th>
+      <th scope="col">Author_name</th>
+      <th scope="col">Price</th>
+      
+      <th scope="col">SHOW</th>
+      <th scope="col">EDIT</th>
+      <th scope="col">DELETE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @books.each do |book | %>
+      <tr>
+        <td><%= book.id%></td>
+        <td><%= book.category.try(:name) %></td>
+        
+        <td><%= book.book_name %></td>
+        <td><%= book.author_name %></td>
+        <td><%= book.price %></td>
+        
+        <td><%= link_to 'Show', book_path(book), :class => "btn btn-success" %></td>
+        <td><%= link_to 'Edit', edit_book_path(book), :class => "btn btn-info" %></td>
+        <td><%= link_to 'Destroy', book_path(book),
+                method: :delete,
+                data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %></td>
+      </tr>
+    <% end %>  
+  </tbody>
+</table>
+<style type="text/css">
+  .bg {
+   background-color: black;
+  }
+</style>
