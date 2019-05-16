@@ -1,2 +1,42 @@
 <h2><%= link_to 'category', new_category_path %></h2>
 <h2><%= link_to 'books', new_book_path %></h2>
+
+
+<h1>Listing Books</h1>
+
+<table class="table table-bordered table-dark bg">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">email</th>
+      <th scope="col">first name</th>
+      <th scope="col">last name</th>
+      <th scope="col">address</th>
+      <th scope="col">image</th>
+      
+      
+      
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user | %>
+      <tr>
+        <td><%= user.id%></td>
+        
+        <td><%= user.email %></td>
+        <td><%= user.first_name %></td>
+        <td><%= user.last_name %></td>
+        <td><%= user.address %></td>
+        <td><%= image_tag(user.image.url, size: "50x50")%></td>
+        
+       
+      
+      </tr>
+    <% end %>  
+  </tbody>
+</table>
+<style type="text/css">
+  .bg {
+   background-color: black;
+  }
+</style>

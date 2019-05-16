@@ -1,7 +1,5 @@
 <h1>Listing Books</h1>
 
-
-
 <table class="table table-bordered table-dark bg">
   <thead>
     <tr>
@@ -10,6 +8,7 @@
       <th scope="col">Book_name</th>
       <th scope="col">Author_name</th>
       <th scope="col">Price</th>
+      <th scope="col">Image</th>
       
       <th scope="col">SHOW</th>
       <th scope="col">EDIT</th>
@@ -25,7 +24,8 @@
         <td><%= book.book_name %></td>
         <td><%= book.author_name %></td>
         <td><%= book.price %></td>
-        
+        <td><%=image_tag(book.image.url, size: "50x50")%></td>
+       
         <td><%= link_to 'Show', book_path(book), :class => "btn btn-success" %></td>
         <td><%= link_to 'Edit', edit_book_path(book), :class => "btn btn-info" %></td>
         <td><%= link_to 'Destroy', book_path(book),
