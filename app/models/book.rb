@@ -3,7 +3,7 @@ class Book < ApplicationRecord
 	belongs_to :category
 
 	def self.search(search)
- 	 where("book_name LIKE ?" , "%#{search}%")
+ 	 	where("book_name LIKE ?" , "%#{search}%")
 	end     
 
 end

@@ -30,12 +30,12 @@ class BooksController < ApplicationController
 	def index
 		# @books = Book.all
 		 if params[:search]
-    	@books = Book.search(params[:search]).order("created_at DESC")
+    	@books = Book.search(params[:search]).order("created_at DESC").paginate(page: params[:page], per_page: 3)
   	else
-    	@books = Book.all.order("created_at DESC")
+    	@books = Book.all.order("created_at DESC").paginate(page: params[:page], per_page: 3)
   	end
 
-  	@books=Book.paginate(page: params[:page], per_page: 1)
+  	# @books=Book.paginate(page: params[:page], per_page: 3)
 	end
 
 	def show

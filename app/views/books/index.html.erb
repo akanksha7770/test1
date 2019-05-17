@@ -25,10 +25,11 @@
         <td><%= book.book_name %></td>
         <td><%= book.author_name %></td>
         <td><%= book.price %></td>
-      <% if book.image.present?%>
-          <td><%=image_tag(book.image.url, size: "50x50")%></td>
+          <% if book.image.present?%>
+          <%#= image_tag @book.image_url %>
+        <td><%=image_tag(book.image.url, size: "50x50")%></td>
           
-         <% end %>
+          <% end %>
        
         <td><%= link_to 'Show', book_path(book), :class => "btn btn-success" %></td>
         <td><%= link_to 'Edit', edit_book_path(book), :class => "btn btn-info" %></td>
