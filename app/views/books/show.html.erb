@@ -20,7 +20,9 @@
 
 <p>
   <strong>Image:</strong>
-  <td><%=image_tag(@book.image.url, size: "100x100")%></td>
+  <% if @book.image.present?%>
+   <td><%=image_tag(@book.image.url, size: "100x100")%></td>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_book_path(@book), :class=> "btn btn-success" %>
