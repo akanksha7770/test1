@@ -16,6 +16,7 @@
     </tr>
   </thead>
   <tbody>
+
     <% @books.each do |book | %>
       <tr>
         <td><%= book.id%></td>
@@ -32,8 +33,12 @@
                 method: :delete,
                 data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %></td>
       </tr>
+
     <% end %>  
   </tbody>
+  <% if @books.blank? %>
+  <h4>There are no books containing the term <%= params[:search] %>.</h4>
+<% end %>
 </table>
 <style type="text/css">
   .bg {
