@@ -34,6 +34,8 @@ class BooksController < ApplicationController
   	else
     	@books = Book.all.order("created_at DESC")
   	end
+
+  	@books=Book.paginate(page: params[:page], per_page: 1)
 	end
 
 	def show

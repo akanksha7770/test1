@@ -40,6 +40,8 @@
   <h4>There are no books containing the term <%= params[:search] %>.</h4>
 <% end %>
 </table>
+
+<%= will_paginate @books %>
 <style type="text/css">
   .bg {
    background-color: black;
