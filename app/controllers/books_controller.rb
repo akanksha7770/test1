@@ -7,6 +7,8 @@ class BooksController < ApplicationController
 	  @book = Book.new(book_params)
 	 
 	  if @book.save
+	  	#byebug
+	  	UserMailer.welcome_email(current_user).deliver_now
 	    redirect_to @book
 	  else
 	    render 'new'
