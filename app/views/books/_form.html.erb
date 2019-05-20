@@ -11,6 +11,7 @@
   <p>
     <%= f.label :book_name %><br>
     <%= f.text_field :book_name %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
   </p>
  
   <p>
