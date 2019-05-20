@@ -3,7 +3,7 @@ class Book < ApplicationRecord
 	belongs_to :category
   belongs_to :user
 	def self.search(search)
- 	 	where("book_name LIKE ?" , "%#{search}%")
+ 	 	where("lower(book_name) LIKE ?" , "%#{search}%".downcase)
 	end     
 
 end
