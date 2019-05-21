@@ -1,10 +1,11 @@
-<%= form_for :book, url: books_path do |f| %> 
+<%= form_for(@book) do |f| %> 
 
    
 
   <p>
     <%= f.label :category_id %><br>
     <%= f.select(:category_id, Category.all.collect{|u| [u.name, u.id]}, :prompt => 'select')%> 
+    <%#= f.select(:user_id, User.all.collect{|u| [u.first_name, u.id]}, :prompt => 'select')%> 
   </p>
   
 

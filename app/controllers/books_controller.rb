@@ -16,14 +16,16 @@ class BooksController < ApplicationController
 	end
 
 	def edit
+		# byebug
+     # byebug
  	 @book = Book.find(params[:id])
 	end
 
 	def update
 	  @book = Book.find(params[:id])
 	 
-	  if @book.update(Book_params)
-	    redirect_to @Book
+	  if @book.update(book_params)
+	    redirect_to @book
 	  else
 	    render 'edit'
 	  end
