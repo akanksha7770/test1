@@ -17,6 +17,32 @@ index do
   actions
 end
 
+form do |form|
+
+	   form.inputs do
+
+	   form.input :book_name, :label => 'Name'
+
+	   form.input :category_id, :label => 'category_id', :as => :select, :collection => Category.all.map{|u| ["#{u.name}", u.id]}   
+
+	   form.input :author_name, :label => 'author_name'
+	   form.input :price, :label => 'price'
+	   form.input :image, :label => 'image', as: :file
+     form.input :user_id, :label => 'user_id', :as => :select, :collection => User.all.map{|u| ["#{u.first_name}", u.id]} 
+	   #<%= form.submit %>
+
+	    
+
+	   
+
+	
+
+	  end
+
+	   form.actions
+
+	 end
+
 
 
 end
