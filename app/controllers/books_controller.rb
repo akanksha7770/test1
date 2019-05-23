@@ -7,10 +7,12 @@ class BooksController < ApplicationController
 	  @book = Book.new(book_params)
 	 
 	  if @book.save
+	  	flash[:success] = "You are successfully saved."
 	  	#byebug
 	  	UserMailer.welcome_email(current_user).deliver_now
 	    redirect_to @book
 	  else
+	  	flash.now[:error] = "You have not updated #{@book.name}."
 	    render 'new'
 	  end
 	end
@@ -25,6 +27,7 @@ class BooksController < ApplicationController
 	  @book = Book.find(params[:id])
 	 
 	  if @book.update(book_params)
+	  	flash[:success] = "You are successfully updated."
 	    redirect_to @book
 	  else
 	    render 'edit'

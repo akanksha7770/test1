@@ -31,13 +31,7 @@ form do |form|
      form.input :user_id, :label => 'user_id', :as => :select, :collection => User.all.map{|u| ["#{u.first_name}", u.id]} 
 	   #<%= form.submit %>
 
-	    
-
-	   
-
-	
-
-	  end
+	   end
 
 	   form.actions
 
