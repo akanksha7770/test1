@@ -18,16 +18,14 @@ class BooksController < ApplicationController
 	end
 
 	def edit
-		# byebug
-     # byebug
- 	 @book = Book.find(params[:id])
+		@book = Book.find(params[:id])
 	end
 
 	def update
 	  @book = Book.find(params[:id])
 	 
 	  if @book.update(book_params)
-	  	flash[:success] = "You are successfully updated."
+	  	flash[:success] = "You are successfully updated ."
 	    redirect_to @book
 	  else
 	    render 'edit'

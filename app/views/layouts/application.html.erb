@@ -27,9 +27,9 @@
   </head>
 
   <body>
-     <% flash.each do |key, value| %>
-    <%= content_tag :div, value, class: "flash #{key}" %>
-    <% end %>
+    <%# flash.each do |key, value| %>
+    <%#= content_tag :div, value, class: "flash #{key}" %>
+    <%# end %>
     <div class="header">
       <a href="#default" class="logo"><%= current_user.try(:email) %> </a>
       <div class="header-right">
